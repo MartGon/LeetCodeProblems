@@ -16,10 +16,14 @@ pub fn min_swaps(nums: Vec<i32>) -> i32 {
             sum = sum + digit;
         };
         println!("The sum is {}", sum);
-        map.insert(*x, sum);
+        
 
         return sum;
     }).collect();
+
+    for (idx, x) in nums.iter().enumerate(){
+        map.insert(sums[idx], *x);
+    }
 
     println!("The result is {:?}", map);
 
